@@ -1,10 +1,11 @@
 import React from "react";
+// eslint-disable-next-line
 import Poem from "./Poem";
 
-function PoemsContainer() {
+function PoemsContainer({ poems }) {
   return (
     <div className="poems-container">
-      {/* render a list of <Poem> components in here */}
+      {poems.map(poem => <Poem key={poem.title} poem={poem}/>)}
     </div>
   );
 }
