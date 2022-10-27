@@ -30,8 +30,14 @@ function App() {
     };
 
     fetch(API, configObj)
+    .then(resp => resp.json())
+    .then(newPoem => {
+      const nP = newPoem;
+      const newArray = [...poems, nP];
+      setPoems(newArray);
+    })
   };
-  
+
   return (
     <div className="app">
       <div className="sidebar">
